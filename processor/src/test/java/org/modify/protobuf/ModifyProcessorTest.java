@@ -19,9 +19,8 @@ import org.testng.annotations.Test;
 public class ModifyProcessorTest {
     @Test(enabled = true)
     public void runAnnoationProcessor() throws Exception {
-        String source = "/home/amarchanka/project/MyProjects/modify_protobuf/processor/src/test/java/";
-
-        Iterable<JavaFileObject> files = getSourceFiles(source);
+        Iterable<JavaFileObject> files = getSourceFiles(
+                Data.class.getProtectionDomain().getCodeSource().getLocation().getFile().replaceAll("/target/test-classes/", "/src/test/java/"));
 
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 

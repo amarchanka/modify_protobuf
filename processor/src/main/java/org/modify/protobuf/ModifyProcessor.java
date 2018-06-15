@@ -111,7 +111,7 @@ public class ModifyProcessor extends AbstractProcessor {
         }
     }
 
-    private void modifyClass(Set<TypeElement> interfaces, FileObject resource) throws IOException, FileNotFoundException {
+    private void modifyClass(Set<TypeElement> interfaces, FileObject resource) throws IOException {
         File file = new File(resource.toUri());
         messager.printMessage(Diagnostic.Kind.WARNING, "Found resource!!! [" + resource.toUri() + "]" + file);
         ClassReader reader;
